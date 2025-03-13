@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #013220;
+}
+
+h1 {
+    margin-top: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Center the calendar on the screen with proper margins */
+.calendar {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of doors */
+    gap: 10px; /* Space between doors */
+    justify-content: center; /* Center the grid content */
+    align-items: center; /* Vertically align the calendar */
+    max-width: 800px; /* Limit the maximum width of the calendar */
+    margin: 50px auto; /* Center horizontally and add spacing on top/bottom */
+    padding: 20px; /* Add padding around the calendar */
+    background-color: #0f3925; /* Optional: Slightly darker background for the calendar */
+    border-radius: 15px; /* Rounded corners for the calendar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow around the calendar */
+}
+
+/* Styling each door */
+.door {
+    display: flex; /* Use flexbox for centering content */
+    justify-content: center; /* Center image horizontally */
+    align-items: center; /* Center image vertically */
+    width: 120px; /* Set a fixed width for the doors */
+    height: 120px; /* Set a fixed height for the doors */
+    border-radius: 10px; /* Optional: Rounded corners (can also be removed if not needed) */
+    padding: 5px; /* Add a small padding around the image */
+    transition: transform 0.2s ease; /* Smooth scaling on hover */
+    background-color: transparent; /* Transparent background */
+}
+
+
+
+/* Center and scale the image inside the door */
+.door img {
+    display: block; /* Ensure no inline gaps */
+    max-width: 100%; /* Scale down to fit the width of the door */
+    max-height: 100%; /* Scale down to fit the height of the door */
+    object-fit: contain; /* Preserve aspect ratio while fitting inside the door */
+    border-radius: 5px; /* Optional: Rounded corners for images */
+}
+
+.door:hover {
+    transform: scale(1.12); /* Subtle zoom effect */
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 50px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    border-radius: 10px;
+}
+
+#closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#modal-message {
+    margin-bottom: 20px;
+}
+
+#modal-image {
+    max-width: 100%; /* Image should not exceed modal's width */
+    max-height: 300px; /* Scale down the height to avoid oversized images */
+    border-radius: 5px;
+    object-fit: contain; /* Preserve aspect ratio */
+    margin: 0 auto; /* Center the image */
+    display: block;
+}
+
+/* Snowflake styles */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall 10s linear infinite, sway 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Falling animation */
+@keyframes fall {
+    from {
+        top: -10px;
+        transform: translateX(0);
+    }
+    to {
+        top: 100vh;
+        transform: translateX(50px);
+    }
+}
+
+/* Swaying animation */
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+}
