@@ -16,7 +16,7 @@ This is a simple interactive Advent Calendar web app that allows users to open d
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/advent-calendar.git
+   [git clone https://github.com/yourusername/advent-calendar.git](https://github.com/jenxwa/Advent-Calendar-Template.git)
    ```
 2. Open `index.html` in your web browser.
 
